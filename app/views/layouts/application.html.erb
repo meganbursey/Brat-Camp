@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bratcamp</title>
+    <title>B.R.A.T. Camp</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -9,13 +9,17 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
 
   <body>
 <div>
-    <nav class="navbar navbar-default "> -->
-    <nav class="navbar navbar-fixed-top navbar-light" style="background-color: #e3f2fd;  ">
+    <nav class="navbar navbar-default" > 
+    <nav class="navbar navbar-fixed-top navbar-light" style="background-color: #008F95">
           <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -28,12 +32,22 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" >
         <li><%= link_to "Home", root_path, class: "navbar-brand" %></li>
         <li><%= link_to "Activities", activities_path %></li> 
-        <li><%= link_to "About Us", about_path %></li>
+        
+        <li class="dropdown" style="background-color: #008F95">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #008F95">About Us<span class="caret"></span></a>
+          <ul class="dropdown-menu" style="background-color: #008F95">
+
+            <li><%= link_to "Camp Counselors", about_path %></li>
+            <li><%= link_to "Mission", mission_path %></li>
+            <li><%= link_to "Contact Us", contact_path %></li>
+
+          </ul>
+
         <li><%= link_to 'Register', new_participant_path %></li> 
-        <li> <%= link_to "See who's already signed up!", participants_path %></li>
+        <li><%= link_to "Registered B.R.A.T.S.", participants_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

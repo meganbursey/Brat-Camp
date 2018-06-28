@@ -27,13 +27,21 @@
 .carousel-inner > .item > a > img {
   display: block;
   width: 100%;
-  max-height: 500px !important;
+  height: 100%;
+  max-height: 600px !important;
+
 }
+
+.container-main {
+  background-color: pink;
+  padding: 0 10px 10px 0;
+  }
+
 
 /* ------------------- Carousel Styling ------------------- */
 
 .carousel-inner {
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 .carousel-inner > .item > img {
@@ -41,15 +49,16 @@
 }
 
 .carousel-caption {
-  background-color: rgba(0,0,0,.5);
+  background-color: #0000;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
+  padding: 15px;
+  color: black;
   text-align: left;
+  border-radius: 20px;
 }
 
 .carousel-indicators {
@@ -60,13 +69,15 @@
   width: 100%;
   z-index: 15;
   margin: 0;
-  padding: 0 25px 25px 0;
+  padding: 0 10px 25px 0;
   text-align: right;
 }
 
 .carousel-control.left,
 .carousel-control.right {
   background-image: none;
+    top: 50%;
+    bottom: 50%;
 }
 
 
@@ -79,7 +90,7 @@
 }
 
 .section-white {
-  background-color: #fff;
+  background-color: #0000;
   color: #555;
 }
 
@@ -115,7 +126,6 @@
 
 .jumbotron {
   opacity: 0.9;
-
   margin-top: -30px;
   margin-bottom: 0px;
   border-bottom: none;
@@ -126,23 +136,50 @@
   height: 450px; 
   top:0;
   left:0;
-  z-index: -1;
+  z-index: -10;
 }
 
 .jumbotron2 {
-  margin-top: -30px;
+  opacity: 0.9;
+  margin-top: -20px;
   margin-bottom: 0px;
   border-bottom: none;
-  background: url("https://www.ymcatreasurecoast.org/wp-content/uploads/2015/07/Staff.thumbsup1.jpg") no-repeat center center;;
+  background: url("https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-0.3.5&s=900d5432a1d7e933c0153dace683f73a&auto=format&fit=crop&w=1050&q=80") no-repeat center center;;
   background-size: cover;
   color: white;
   width: 100%;
   height: 550px; 
   top:0;
   left:0;
-  z-index: -1;
+  z-index: -10;
 }
 
+.jumbotron-mission {
+  opacity: 1;
+  color: black;
+  margin-top: -20px;
+  margin-bottom: 0px;
+  border-bottom: none;
+  background: url("http://www.bnymca.org/clientuploads/Child%20Care/2016-10-Y_BSE-SHOT5_0022.jpg") no-repeat center center;;
+  background-size: cover;
+  width: 100%;
+  height: 550px; 
+  position: relative;
+  z-index: -10;
+}
+
+
+
+.jumbotron-mission::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 20, 20, .5);
+  z-index: -9 /*Moved one position above the -10 */
+}
 
 
 #whiteh1 {
@@ -155,24 +192,55 @@
     border-top: none;
 }
 
+/* Navbar styling ------------------ */
 
-  .navbar-nav > li {
-    float: none;
-    display: inline-block;
-  }
+.dropdown-menu {
+  background-color: #008F95;
+}
 
 
-  .navbar-nav > li.navbar-right {
-    float: right !important;
-  }
+  .nav.navbar-nav li a {
+     color: black !important; 
+ }
+ .nav.navbar-nav li a:hover { 
+     color: black !important;
+
+ }
+
+.navbar .nav {
+    margin: 50;
+    display: flex;
+    flex-direction: row;
+    width: 220%;
+}
+
+.navbar .nav li {
+    flex: 1;
+}
+
+.navbar .nav li a {
+    font-weight: regular;
+    font-size: 16px;
+    text-align: center;
+    flex: 1;
+}
+ 
+.container-activities {
+  background-color: #0000;
+  border-radius: 100;
+}
+
+.container-c {
+  background-color: #0000;
+}
 
 .diva {
-  background-color: black;
+  opacity: 1;
+  background-color: #0000;
   text-align: center;
-  opacity: 0.5;
   width:auto;
   height: 100%;
-  margin-top: 400px;
+  margin-top: 0px;
   margin-left: 0;
   margin-right:auto;
   padding: 15px;
@@ -180,12 +248,13 @@
 }
 
 .divb {
-  background-color: #18b4e0;
+  background-color: #0000;
   text-align: center;
-
+  opacity: 1;
   width:auto;
   height: 100%;
-  margin-top: 0px;
+  margin-top: 400px;
+  color: black;
   margin-left: 0;
   margin-right:auto;
   padding: 15px;
@@ -200,6 +269,9 @@
   height: auto;
  }
 
+.container-map {
+  align: center;
+}
 
 .mybutton { 
 
@@ -209,6 +281,66 @@
   border-radius: 10px;
  }
 
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
 
 
 
